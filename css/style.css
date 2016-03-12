@@ -16,3 +16,10 @@ img{
 body{
  background-color:#ccffff;
 }
+a:link{
+ color:red;
+}
+a:hover{
+ font-family:Verdana;
+ color:purple;
+}
