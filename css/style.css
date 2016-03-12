@@ -8,3 +8,10 @@ p{
  font-family:Helvetica;
  color:green;
 }
+a:link{
+ color:red;
+}
+a:hover {
+ color: hotpink;
+  font-family:Georgia;
+}
