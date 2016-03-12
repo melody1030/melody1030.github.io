@@ -8,11 +8,12 @@
 p{
  font-family:Helvetica;
  color:#0066ff;
+ font-size:50px;
 }
 img{
  height:300px;
  width:350px;
- border:2px dashed #3366ff;
+ border:2px dashed #000099;
 }
 body{
  background-color:#ccffff;
