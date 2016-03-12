@@ -11,7 +11,7 @@ p{
 img{
  height:300px;
  width:350px;
- border:solid;
+ border:2px dashed #ffff99;
 }
 body{
  background-color:#ccffff;
