@@ -11,6 +11,7 @@ p{
 img{
  height:300px;
  width:350px;
+ border:solid;
 }
 body{
  background-color:#ccffff;
