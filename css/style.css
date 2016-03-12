@@ -2,6 +2,7 @@ h1{
  font-family:"Times New Roman";
  color: orange;
  border-style: dotted;
+ text-align:center;
 }
 p{
  font-family:Helvetica;
