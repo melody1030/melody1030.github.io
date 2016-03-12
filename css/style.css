@@ -1,8 +1,8 @@
-h1{
+div{
  font-family:"Times New Roman";
  color: orange;
  border-style: dotted;
- margin:auto;
+ text-align:auto;
 }
 p{
  font-family:Helvetica;
