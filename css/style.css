@@ -26,6 +26,6 @@ a:hover{
  color:purple;
 }
 div{
- border-radius:30px;
- border:3 double #ff8c1a;
+ border-radius:10px;
+ border:3 dotted #ff8c1a;
 }
