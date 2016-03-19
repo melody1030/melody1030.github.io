@@ -25,3 +25,7 @@ a:hover{
  font-family:Verdana;
  color:purple;
 }
+div{
+ border-radius:30px;
+ border:3 double #ff8c1a;
+}
