@@ -17,6 +17,7 @@ img{
 }
 body{
  background-color:#ccffff;
+ padding-top: 70px;
 }
 a{
  color:red;
@@ -25,8 +26,3 @@ a:hover{
  font-family:Verdana;
  color:purple;
 }
-/*div{*/
-/* border-radius:10px;*/
-/* border:1px dotted #ff8c1a;*/
-/* font-size:20px;*/
-/*}*/
