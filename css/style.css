@@ -15,7 +15,7 @@ body{
 a{
  color:red;
 }
-a:hover{
+.btn btn-primary:hover{
  font-family:Verdana;
  color:purple;
 }
