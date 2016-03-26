@@ -15,10 +15,6 @@ body{
 a{
  color:red;
 }
-.link:hover{
- font-family:Verdana;
- color:purple;
-}
 .sidebar{
  background-color:#cccccc;
  margin: auto;
