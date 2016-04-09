@@ -10,8 +10,8 @@
       studentCollection = db.collection('students');
       for(var i=0; i<9;i++){
         studentCollection.insert({
-          name: "Koding",
-          age: math.floor((math.random()*100)+1);
+          name: i,
+          age: math.floor((math.random()*100));
           studentCollection.save();
           studentCollection.load();
         });
