@@ -8,9 +8,9 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("students");
       studentCollection = db.collection('students');
-      for(var i=0; i<=10;i++){
+      for(var i=0; i<=9;i++){
         studentCollection.insert({
-          name: i,
+          name: Math.floor(Math.random()*10),
           age: Math.floor(Math.random()*100)
         });
       }
