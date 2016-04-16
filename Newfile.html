@@ -19,14 +19,12 @@
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("students");
-      var id = 0,
-          age = 0;
       studentCollection = db.collection('students');
       function add(){
         for(var i=1; i<=20;i++){
           studentCollection.insert({
-            id: id = i,
-            age: age = Math.floor(Math.random()*30)
+            id: i,
+            age:Math.floor(Math.random()*30)
           });
           $("#id").append("<tr><td>"+id+"</td><td>"+age+"</td></tr>")
         }
