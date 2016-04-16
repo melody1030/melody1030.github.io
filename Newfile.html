@@ -28,9 +28,9 @@
             id: id = i,
             age: age = Math.floor(Math.random()*100)
           });
+          $("#id").append("<td>"+id+"</td><td>"+age+"</td>")
         }
         studentCollection.save();
-        $("#id").append("<td>id</td><td>age</td>")
       });
     </script>
   </body>
