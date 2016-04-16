@@ -33,9 +33,9 @@
         studentCollection.save();
         $("#students").click(function(){
           var thisStudent = $(this).text();
-          studentCollection.find();
+          studentCollection.find({_id:thisStudent});
           $("#modal").append("id:"+id+","+"age:"+age)
-          $('#modal').show();
+          $('#myMadol').show();
         })
       });
     </script>
