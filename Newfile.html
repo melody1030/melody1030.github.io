@@ -22,7 +22,7 @@
       var id = 0,
           age = 0;
       studentCollection = db.collection('students');
-      studentCollection.load(function(){
+      function(){
         for(var i=1; i<=20;i++){
           studentCollection.insert({
             id: id = i,
@@ -36,7 +36,6 @@
         var _id = studentCollection._id;
         DB.collection("students").find(_id);
         $("#modal").append("id:"+id+","+"age:"+age)
-      });
     </script>
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
       <div class="modal-dialog modal-sm">
