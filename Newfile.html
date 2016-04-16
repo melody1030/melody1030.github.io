@@ -54,7 +54,7 @@
         $(".students").click(function(){
           var thisStudent = $(this).text();
           console.log("I'm in")
-          studentCollection.find({_id:thisStudent});
+          studentCollection.find(thisStudent);
           $("#modal").append("id:"+id+","+"age:"+age)
           $('#myMadol').show();
         })
