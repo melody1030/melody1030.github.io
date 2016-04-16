@@ -1,10 +1,21 @@
 <html>
   <head>
     <title>Students</title>
-  </head>
-  <body>
     <script type="text/javascript" src="/js/jquery-1.12.2.min.js"></script>
     <script type="text/javascript" src="/js/fdb-all.min.js"></script>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>id</td>
+          <td>age</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="id"></tr>
+      </body>
+    </table>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("students");
@@ -12,11 +23,12 @@
       studentCollection.load(function(){
         for(var i=0; i<=9;i++){
           studentCollection.insert({
-            name: Math.floor(Math.random()*100),
+            id: i,
             age: Math.floor(Math.random()*100)
           });
         }
         studentCollection.save();
+        $("#id").append("<td>id</td><td>age</td>")
       });
     </script>
   </body>
