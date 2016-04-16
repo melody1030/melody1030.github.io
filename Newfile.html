@@ -11,6 +11,7 @@
         <tr>
           <td>id</td>
           <td>age</td>
+          <td>_id</td>
         </tr>
       </thead>
       <tbody id="id">
@@ -28,12 +29,12 @@
             id: id = i,
             age: age = Math.floor(Math.random()*30)
           });
-          $("#id").append("<tr><td><button type=button data-toggle=modal data-target=.bs-example-modal-sm  id=age>"+id+"</button></td><td>"+age+"</td></tr>")
+          $("#id").append("<tr><td><button type=button  class=btn btn-primary data-toggle=modal data-target=.bs-example-modal-sm>"+id+"</button></td><td>"+age+"</td><td id=_id>"+_id"</td></tr>")
         }
         studentCollection.save();
       });
       $("#age").click(function(){
-        DB.collection("students").find(id)
+        studentsCollection.find({_id};)
         $("#modal").append("id:"+id+","+"age:"+age)
       });
     </script>
