@@ -56,7 +56,7 @@
           var thisStudent = $(this).text();
           console.log("I'm in!")
           studentCollection.find(thisStudent);
-          $("#myModal .modal-body").append("id:"+id+","+"age:"+age)
+          $("#myModal .modal-body").html("id:"+students[i]._id+","+"age:"+students[i].age)
           $('#myModal').modal('show')
         })
       });
