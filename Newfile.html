@@ -16,6 +16,22 @@
       <tbody id="id">
       </body>
     </table>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">information</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("students");
@@ -23,13 +39,17 @@
           age=0;
       studentCollection = db.collection('students');
       studentCollection.load(function(){
-        for(var i=1; i<=20;i++){
-          studentCollection.insert({
-            id: id=i,
-            age: age=Math.floor(Math.random()*30)
-          });
-          $("#id").append("<tr><td id=students>"+id+"</td><td>"+age+"</td></tr>")
-        }
+        // for(var i=1; i<=20;i++){
+        //   studentCollection.insert({
+        //     id: id=i,
+        //     age: age=Math.floor(Math.random()*30)
+        //   });
+
+        // }
+        var students = studentCollection.find();
+        for(var i=0;i<students.length;i++){
+          $("#id").append("<tr><td id='students'>"+students[i].id+"</td><td>"+students[i].age+"</td></tr>")
+        };
         studentCollection.save();
         $("#students").click(function(){
           var thisStudent = $(this).text();
@@ -39,22 +59,5 @@
         })
       });
     </script>
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">information</h4>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
