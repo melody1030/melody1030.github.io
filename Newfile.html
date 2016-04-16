@@ -16,6 +16,12 @@
       <tbody id="id">
       </body>
     </table>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content" id="modal">
+        </div>
+      </div>
+    </div>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("students");
@@ -33,7 +39,8 @@
         studentCollection.save();
       });
       $("#age").click(function(){
-        DB.collection("students").find(studentCollection[i]);
+        DB.collection("students").find(studentCollection[i])
+        $("#modal").append("id:"+id+","+"age:"+age)
       });
     </script>
   </body>
