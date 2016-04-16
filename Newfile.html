@@ -8,7 +8,6 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("students");
       studentCollection = db.collection('students');
-      var name=[Cameron,Joy,Flynn,Howard,Sarah,Alika,Whilemina,Holmes,Haviva,Harding,Tanner,Neil,Denton,Aretha,Melvin,Kitra,Willa,Brielle,Emily,Ian]
       studentCollection.load(function(){
         for(var i=0; i<=9;i++){
           studentCollection.insert({
