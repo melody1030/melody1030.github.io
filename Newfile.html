@@ -30,8 +30,8 @@
         }
         studentCollection.save();
         $("#students").click(function(){
-          var thisStudent = studentCollection.$(this).text();
-          studentCollection.find({_id:});
+          var thisStudent = $(this).text();
+          studentCollection.find({_id:thisStudent});
           $("#modal").append("id:"+id+","+"age:"+age)
           $('#modal').show();
         })
