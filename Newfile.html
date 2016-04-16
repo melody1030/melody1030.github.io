@@ -54,7 +54,7 @@
         studentCollection.save();
         $(".students").click(function(){
           var thisStudent = $(this).text();
-          console.log("I'm in")
+          console.log("I'm in!")
           studentCollection.find(thisStudent);
           $("#myModal .modal-body").append("id:"+id+","+"age:"+age)
           $('#myModal').modal('show')
