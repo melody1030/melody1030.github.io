@@ -9,7 +9,7 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <td>id</td>
+          <td>_id</td>
           <td>age</td>
         </tr>
       </thead>
@@ -48,7 +48,7 @@
         // }
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
-          $("#id").append("<tr><td class='students'>"+students[i]._id+"</td><td>"+students[i].age+"</td></tr>")
+          $("#_id").append("<tr><td class='students'>"+students[i]._id+"</td><td>"+students[i].age+"</td></tr>")
         };
         studentCollection.save();
         $(".students").click(function(){
