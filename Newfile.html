@@ -33,6 +33,7 @@
         studentCollection.save();
       });
       $("#age").click(function(){
+        var _id = studentCollection._id;
         DB.collection("students").find(_id);
         $("#modal").append("id:"+id+","+"age:"+age)
       });
