@@ -53,10 +53,10 @@
         };
         studentCollection.save();
         $(".students").click(function(){
-          var thisStudent = $(this).text();
+          var thisStudentId = $(this).text();
           console.log("I'm in!")
-          studentCollection.find(thisStudent);
-          $("#myModal .modal-body").html("id:"+students[i]._id+","+"age:"+students[i].age)
+          var thisStudent = studentCollection.find({_id:thisStudentId});
+          $("#myModal .modal-body").html("id:"+thisStudent._id+","+"age:"+thisStudent.age)
           $('#myModal').modal('show')
         })
       });
