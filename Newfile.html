@@ -48,7 +48,7 @@
         // }
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
-          $("#id").append("<tr><td id='students'>"+students[i].id+"</td><td>"+students[i].age+"</td></tr>")
+          $("#id").append("<tr><td id='students'>"+students[i]._id+"</td><td>"+students[i].age+"</td></tr>")
         };
         studentCollection.save();
         $("#students").click(function(){
