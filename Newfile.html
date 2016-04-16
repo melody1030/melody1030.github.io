@@ -28,9 +28,12 @@
             id: id = i,
             age: age = Math.floor(Math.random()*30)
           });
-          $("#id").append("<tr><td>"+id+"</td><td>"+age+"</td></tr>")
+          $("#id").append("<tr><td>"+id+"</td><td id="age">"+age+"</td></tr>")
         }
         studentCollection.save();
+      });
+      $("#age").click(function(){
+        DB.collection("students").find(age);
       });
     </script>
   </body>
