@@ -23,7 +23,7 @@
           age = 0;
       studentCollection = db.collection('students');
       studentCollection.load(function(){
-        for(var i=1; i<=10;i++){
+        for(var i=1; i<=20;i++){
           studentCollection.insert({
             id: id = i,
             age: age = Math.floor(Math.random()*30)
