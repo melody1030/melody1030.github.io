@@ -72,9 +72,9 @@
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
           $("#_id").append(
-            "<tr><td class='students'>"+students[i]._id+
-            "</td><td>"+students[i].age+
-            "</td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#edditModal' id='change'>Change</button></td></tr>"
+            "<tr><td class='students'><span>"+students[i]._id+
+            "</span></td><td><span>"+students[i].age+
+            "</sapn></td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#edditModal' id='change'>Change</button></td></tr>"
           )
         };
         studentCollection.save();
@@ -86,7 +86,7 @@
           $('#myModal').modal('show')
         })
         $("#change").click(function(){
-          var data = $(this).siblings("td").text();
+          var data = $(this).siblings("span").text();
           
         })
       });
