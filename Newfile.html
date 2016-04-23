@@ -45,13 +45,13 @@
           </div>
           <div class="modal-body">
             <lable class="control-label">age</lable>
-            <input type="text" id="age">
+            <input type="text" id="studentAgeInput">
             <lable class="control-label">grade</lable>
-            <input type="text" id="grade">
+            <input type="text" id="studentGradeInput">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="change">Save changes</button>
+            <button type="button" class="btn btn-primary" id="saveChange">Save changes</button>
           </div>
         </div>
       </div>
@@ -60,7 +60,8 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("students");
       var id=0,
-          age=0;
+          age=0,
+          studentId = "";
       studentCollection = db.collection('students');
       studentCollection.load(function(){
         // for(var i=1; i<=20;i++){
@@ -70,15 +71,17 @@
         //   });
 
         // }
-        var students = studentCollection.find();
-        var grade = 0;
-        for(var i=0;i<students.length;i++){
-          $("#_id").append(
-            "<tr><td class='students'><span>"+students[i]._id+
-            "</span></td><td><span>"+students[i].age+
-            "</sapn></td><td>"+grade+"</td><td><button class='edit-btn' data-id='"+students[i]._id+"'>Change</button></td></tr>"
-          )
-        };
+        function show(data){
+          var students = studentCollection.find();
+          var grade = 0;
+          for(var i=0;i<students.length;i++){
+            $("#_id").append(
+              "<tr><td class='students'><span>"+students[i]._id+
+              "</span></td><td><span>"+students[i].age+
+              "</sapn></td><td>"+grade+"</td><td><button class='edit-btn' data-id='"+students[i]._id+"'>Change</button></td></tr>"
+            )
+          };
+        }
         studentCollection.save();
         $(".students").click(function(){
           var thisStudentId = $(this).text();
@@ -90,9 +93,24 @@
         
         $(".edit-btn").click(function(){
           console.log("I'm in");
-          $('#deitModal').modal('show')
+          var studentsData = studentCollection.find({_id=$(this).data("id")});
+          studentData = studentsData[0];
+          studentsId = s$(this).data("id");
+          $("#studentAgeInput").val(studentsData.age);
+          $("#studentGradeInput").val(studentsData.grade);
+          $('#editModal').modal("show")
         });
       });
+      
+      $("#saveChange").click(function(){
+        var newData={
+          name: $("#studentAgeInput").val(),
+          grade: $("#studentGradeInput").val()
+        };
+        DB.collection("students").updateById(studentId,newData);
+        studentCollection.save();
+        show(studentCollection.find());
+      })
     </script>
   </body>
 </html>
