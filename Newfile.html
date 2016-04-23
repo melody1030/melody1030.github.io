@@ -108,7 +108,7 @@
           name: $("#studentAgeInput").val(),
           grade: $("#studentGradeInput").val()
         };
-        studentCollection("students").updateById(studentId,newData);
+        studentCollection.updateById(studentId,newData);
         studentCollection.save();
         showData(studentCollection.find());
       })
