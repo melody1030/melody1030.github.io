@@ -63,6 +63,17 @@
           age=0,
           studentId = "";
       studentCollection = db.collection('students');
+      function showData(data){
+        var students = studentCollection.find();
+        var grade = 0;
+        for(var i=0;i<students.length;i++){
+          $("#_id").append(
+            "<tr><td class='students'><span>"+students[i]._id+
+            "</span></td><td><span>"+students[i].age+
+            "</sapn></td><td>"+grade+"</td><td><button class='edit-btn' data-id='"+students[i]._id+"'>Change</button></td></tr>"
+          )
+        };
+      }
       studentCollection.load(function(){
         // for(var i=1; i<=20;i++){
         //   studentCollection.insert({
@@ -71,17 +82,6 @@
         //   });
 
         // }
-        function showData(data){
-          var students = studentCollection.find();
-          var grade = 0;
-          for(var i=0;i<students.length;i++){
-            $("#_id").append(
-              "<tr><td class='students'><span>"+students[i]._id+
-              "</span></td><td><span>"+students[i].age+
-              "</sapn></td><td>"+grade+"</td><td><button class='edit-btn' data-id='"+students[i]._id+"'>Change</button></td></tr>"
-            )
-          };
-        }
         studentCollection.save();
         $(".students").click(function(){
           var thisStudentId = $(this).text();
