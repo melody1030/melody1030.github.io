@@ -12,6 +12,7 @@
         <tr>
           <td>_id</td>
           <td>age</td>
+          <td>grade</td>
           <td>操作</td>
         </tr>
       </thead>
@@ -84,10 +85,6 @@
           var thisStudent = studentCollection.find({_id:thisStudentId})[0];
           $("#myModal .modal-body").html("id:"+thisStudent._id+" , "+"age:"+thisStudent.age)
           $('#myModal').modal('show')
-        })
-        $("#change").click(function(){
-          var data = $(this).siblings("span").text();
-
         })
       });
     </script>
