@@ -76,7 +76,7 @@
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td><span>"+students[i].age+
-            "</sapn></td><td>"+grade+"</td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#editModal'>Change</button></td></tr>"
+            "</sapn></td><td>"+grade+"</td><td><button class='edit-btn' data-id='"+students[i]._id+"'>Change</button></td></tr>"
           )
         };
         studentCollection.save();
@@ -86,6 +86,10 @@
           var thisStudent = studentCollection.find({_id:thisStudentId})[0];
           $("#myModal .modal-body").html("id:"+thisStudent._id+" , "+"age:"+thisStudent.age)
           $('#myModal').modal('show')
+        })
+        
+        $(".edit-btn").click(function{
+          $('#deitModal').modal('show')
         })
       });
     </script>
