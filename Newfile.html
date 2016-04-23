@@ -82,6 +82,7 @@
         //   });
 
         // }
+        showData(studentCollection.find());
         studentCollection.save();
         $(".students").click(function(){
           var thisStudentId = $(this).text();
