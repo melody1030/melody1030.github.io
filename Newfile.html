@@ -61,11 +61,11 @@
       var db = fdb.db("students");
       var id=0,
           age=0,
+          grade = 0,
           studentId = "";
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
-        var grade = 0;
         for(var i=0;i<students.length;i++){
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
