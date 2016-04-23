@@ -70,7 +70,7 @@
           $("#_id").append(
             "<tr><td class='students'>"+students[i]._id+
             "</td><td>"+students[i].age+
-            "</td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModal' id='newData'>Change</button></td></tr>"
+            "</td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModal'>Change</button></td></tr>"
           )
         };
         studentCollection.save();
@@ -79,9 +79,6 @@
           console.log("I'm in!")
           var thisStudent = studentCollection.find({_id:thisStudentId})[0];
           $("#myModal .modal-body").html("id:"+thisStudent._id+" , "+"age:"+thisStudent.age)
-          $('#myModal').modal('show')
-        })
-        $("#newData").click(function(){
           $('#myModal').modal('show')
         })
       });
