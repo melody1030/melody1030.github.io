@@ -35,7 +35,7 @@
       </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="newData" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -43,7 +43,10 @@
             <h4 class="modal-title" id="myModalLabel">New Data</h4>
           </div>
           <div class="modal-body">
-          <lable>
+          <lable>age</lable>
+          <input type="text" id="age">
+          <lable>grade</lable>
+          <input type="text" id="grade">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -83,7 +86,7 @@
           $('#myModal').modal('show')
         })
         $("#newData").click(function(){
-          $('#newData').modal('show')
+          $('#myModal').modal('show')
         })
       });
     </script>
