@@ -71,10 +71,7 @@
 
         // }
         var students = studentCollection.find();
-        var numbers = 0;
-        for(var i=0; i<49 ;i++){
-          numbers = Math.floor(Math.random()*100);
-        }
+        var grade = 0;
         for(var i=0;i<students.length;i++){
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
