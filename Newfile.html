@@ -75,7 +75,7 @@
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td><span>"+students[i].age+
-            "</sapn></td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#edditModal'>Change</button></td></tr>"
+            "</sapn><td>Math.floor(Math.random()*100)</td></td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#edditModal'>Change</button></td></tr>"
           )
         };
         studentCollection.save();
