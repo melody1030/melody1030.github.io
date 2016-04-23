@@ -34,8 +34,8 @@
         </div>
       </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <!-- edditModal -->
+    <div class="modal fade" id="edditModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -70,7 +70,7 @@
           $("#_id").append(
             "<tr><td class='students'>"+students[i]._id+
             "</td><td>"+students[i].age+
-            "</td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModal'>Change</button></td></tr>"
+            "</td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#edditModal'>Change</button></td></tr>"
           )
         };
         studentCollection.save();
