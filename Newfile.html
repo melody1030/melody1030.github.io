@@ -50,7 +50,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary" id="change">Save changes</button>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td><span>"+students[i].age+
-            "</sapn></td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#edditModal' id='change'>Change</button></td></tr>"
+            "</sapn></td><td><button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#edditModal'>Change</button></td></tr>"
           )
         };
         studentCollection.save();
@@ -87,7 +87,7 @@
         })
         $("#change").click(function(){
           var data = $(this).siblings("span").text();
-          
+
         })
       });
     </script>
