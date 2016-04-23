@@ -16,6 +16,7 @@
         </tr>
       </thead>
       <tbody id="_id">
+        <td><button id=change>"Change"</button></td>
       </body>
     </table>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -50,7 +51,7 @@
         // }
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
-          $("#_id").append("<tr><td class='students'>"+students[i]._id+"</td><td>"+students[i].age+"</td><td><button id=change>"Change"</button></td><td><button id=delete>"Delete"</button></td></tr>")
+          $("#_id").append("<tr><td class='students'>"+students[i]._id+"</td><td>"+students[i].age+"</td><td><button id=delete>"Delete"</button></td></tr>")
         };
         studentCollection.save();
         $(".students").click(function(){
