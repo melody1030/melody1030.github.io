@@ -70,11 +70,11 @@
         //   });
 
         // }
+        var students = studentCollection.find();
         var grade = 0;
         for(var i=0; i<students.length;i++){
           grade = Math.floor(Math.random()*100);
         }
-        var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
