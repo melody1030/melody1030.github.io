@@ -71,7 +71,7 @@
         //   });
 
         // }
-        function show(data){
+        function showData(data){
           var students = studentCollection.find();
           var grade = 0;
           for(var i=0;i<students.length;i++){
@@ -93,9 +93,9 @@
         
         $(".edit-btn").click(function(){
           console.log("I'm in");
-          var studentsData = studentCollection.find({_id=$(this).data("id")});
+          var studentsData = studentCollection.find({_id:$(this).data("id")});
           studentData = studentsData[0];
-          studentsId = s$(this).data("id");
+          studentsId = $(this).data("id");
           $("#studentAgeInput").val(studentsData.age);
           $("#studentGradeInput").val(studentsData.grade);
           $('#editModal').modal("show")
@@ -109,7 +109,7 @@
         };
         DB.collection("students").updateById(studentId,newData);
         studentCollection.save();
-        show(studentCollection.find());
+        showData(studentCollection.find());
       })
     </script>
   </body>
