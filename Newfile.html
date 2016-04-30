@@ -113,8 +113,7 @@
         };
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
-        $("#_id").remove();
-        showData(studentCollection.find());
+        showData();
       })
       
       $("#delete-btn").click(function(){
