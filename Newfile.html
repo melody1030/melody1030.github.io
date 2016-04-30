@@ -97,11 +97,11 @@
         
         $(".edit-btn").click(function(){
           console.log("I'm in");
+          $("#studentAgeInput").val();
+          $("#studentGradeInput").val();
           studentData = studentCollection.find({_id:$(this).data("id")});
           studentData = studentData[0];
           studentId = $(this).data("id");
-          $("#studentAgeInput").val();
-          $("#studentGradeInput").val();
           $('#editModal').modal("show");
         });
       });
