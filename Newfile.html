@@ -89,7 +89,6 @@
         studentCollection.save();
         $(".students").click(function(){
           var thisStudentId = $(this).text();
-          console.log("I'm in!")
           var thisStudent = studentCollection.find({_id:thisStudentId})[0];
           $("#myModal .modal-body").html("id : "+thisStudent._id+" , "+"age : "+thisStudent.age)
           $('#myModal').modal('show')
@@ -117,10 +116,9 @@
       });
       
       $('body').on('click','.delete-btn',function(){
-        alert(removeId);
-        var removeId = $(this).data("id");
+        console.log("I'm in")
         student.Collection.remove({
-          _id: removeId
+          _id: $(this).data("id")
         });
         $("#_id").remove(removeId);
       });
