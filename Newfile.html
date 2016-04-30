@@ -117,8 +117,9 @@
       })
       
       $("#delete-btn").click(function(){
+        console.log("hello");
         var removeId = $(this).data("id");
-        collection.remove({
+        student.Collection.remove({
           _id: removeId
         });
         $("#_id").remove(removeId);
