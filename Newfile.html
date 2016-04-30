@@ -116,17 +116,14 @@
       });
       
       $('body').on('click','.delete-btn',function(){
-        function comfirmRemove(){
-          console.log("HI");
-          var ans = confirm("確定要刪除嗎");
-          if(ans === true){
-            studentCollection.remove({
-              _id: $(this).data("id")
-            });
-            studentCollection.save();
-          }else if(ans === false){
-            alert("不要刪～");
-          };
+        var ans = confirm("確定要刪除嗎");
+        if(ans === true){
+          studentCollection.remove({
+            _id: $(this).data("id")
+          });
+          studentCollection.save();
+        }else if(ans === false){
+          alert("不要刪～");
         };
       });
       
