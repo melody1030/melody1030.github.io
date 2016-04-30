@@ -97,8 +97,8 @@
         
         $(".edit-btn").click(function(){
           console.log("I'm in");
-          studentsData = studentCollection.find({_id:$(this).data("id")});
-          studentsData = studentsData[0];
+          studentData = studentCollection.find({_id:$(this).data("id")});
+          studentData = studentData[0];
           studentId = $(this).data("id");
           $("#studentAgeInput").val();
           $("#studentGradeInput").val();
@@ -121,7 +121,8 @@
         studentCollection.remove({
           _id: $(this).data("id")
         });
-        $("#_id").remove($(this).data("id"));
+        studentCollection.save();
+        showData(studentCollection.find());
       });
     </script>
   </body>
