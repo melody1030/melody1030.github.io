@@ -118,7 +118,7 @@
       })
       
       $("#delete-btn").click(function(){
-        var removeId : $(this).data("id");
+        var removeId = $(this).data("id");
         collection.remove({
           _id: removeId
         });
