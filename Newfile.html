@@ -100,8 +100,8 @@
           var studentsData = studentCollection.find({_id:$(this).data("id")});
           studentsData = studentsData[0];
           studentId = $(this).data("id");
-          $("#studentAgeInput").val(studentsData.age);
-          $("#studentGradeInput").val(studentsData.grade);
+          $("#studentAgeInput").val();
+          $("#studentGradeInput").val();
           $('#editModal').modal("show");
         });
       });
