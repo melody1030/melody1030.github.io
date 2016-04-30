@@ -63,6 +63,7 @@
           age=0,
           grade = 0,
           studentId = "";
+          studntsData= [];
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
@@ -96,7 +97,7 @@
         
         $(".edit-btn").click(function(){
           console.log("I'm in");
-          var studentsData = studentCollection.find({_id:$(this).data("id")});
+          studentsData = studentCollection.find({_id:$(this).data("id")});
           studentsData = studentsData[0];
           studentId = $(this).data("id");
           $("#studentAgeInput").val();
@@ -107,8 +108,8 @@
       
       $("#saveChange").click(function(){
         var newData ={
-          age: $("#studentAgeInput").val(studentsData.age),
-          grade: $("#studentGradeInput").val(studentsData.grade)
+          age: $("#studentAgeInput").val(studentData.age),
+          grade: $("#studentGradeInput").val(studentData.grade)
         };
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
