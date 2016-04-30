@@ -96,7 +96,7 @@
           console.log("I'm in");
           var studentsData = studentCollection.find({_id:$(this).data("id")});
           studentsData = studentsData[0];
-          studentId = $(this).data("id");
+          studentId = $(this).data("_id");
           $("#studentAgeInput").val(studentsData.age);
           $("#studentGradeInput").val(studentsData.grade);
           $('#editModal').modal("show");
