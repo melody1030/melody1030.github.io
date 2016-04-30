@@ -116,6 +116,14 @@
         $("#_id").remove();
         showData(studentCollection.find());
       })
+      
+      $("#delete-btn").click(function(){
+        var removeId : $(this).data("id");
+        collection.remove({
+          _id: removeId
+        });
+        $("#_id").remove(removeId);
+      })
     </script>
   </body>
 </html>
