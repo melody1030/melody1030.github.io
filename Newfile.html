@@ -117,14 +117,14 @@
       
       $('body').on('click','.delete-btn',function(){
         function comfirmRemove(){
-          var comfirm = confirm("確定要刪除嗎");
-          if(comfirm == true){
+          var ans = confirm("確定要刪除嗎");
+          if(ans == true){
             studentCollection.remove({
               _id: $(this).data("id")
             });
             studentCollection.save();
             showData(studentCollection.find());
-          }else if(comfirm == false){
+          }else if(ans == false){
             alert("不要刪～");
           }
         }
