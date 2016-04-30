@@ -108,15 +108,15 @@
       
       $("#saveChange").click(function(){
         var newData ={
-          age: $("#studentAgeInput").val(),
-          grade: $("#studentGradeInput").val()
+          age: $("#studentAgeInput").val(studentsData.age),
+          grade: $("#studentGradeInput").val(studentsData.grade)
         };
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
-        showData();
+        showData(studentCollection.find());
       })
       
-      $('body').on('click','delete-btn',function(){
+      $('body').on('click','.delete-btn',function(){
         console.log("hello");
         var removeId = $(this).data("id");
         student.Collection.remove({
