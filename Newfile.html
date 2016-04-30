@@ -94,9 +94,9 @@
         
         $(".edit-btn").click(function(){
           console.log("I'm in");
-          var studentsData = studentCollection.find({_id:$(this).data("_id")});
+          var studentsData = studentCollection.find({_id:$(this).data("id")});
           studentsData = studentsData[0];
-          studentId = $(this).data("_id");
+          studentId = $(this).data("id");
           $("#studentAgeInput").val(studentsData.age);
           $("#studentGradeInput").val(studentsData.grade);
           $('#editModal').modal("show");
