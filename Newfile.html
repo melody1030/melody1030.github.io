@@ -120,7 +120,7 @@
         studentCollection.remove({
           _id: $(this).data("id")
         });
-        $("#_id").remove(removeId);
+        $("#_id").remove($(this).data("id"));
       });
     </script>
   </body>
