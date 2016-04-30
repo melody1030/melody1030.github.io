@@ -116,7 +116,7 @@
       });
       
       $('body').on('click','.delete-btn',function(){
-        console.log("I'm in")
+        console.log("I'm in");
         studentCollection.remove({
           _id: $(this).data("id")
         });
