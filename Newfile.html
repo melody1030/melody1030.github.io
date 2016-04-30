@@ -117,7 +117,7 @@
       
       $('body').on('click','.delete-btn',function(){
         console.log("I'm in")
-        student.Collection.remove({
+        students.Collection.remove({
           _id: $(this).data("id")
         });
         $("#_id").remove(removeId);
