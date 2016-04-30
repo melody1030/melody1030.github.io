@@ -94,7 +94,7 @@
         
         $(".edit-btn").click(function(){
           console.log("I'm in");
-          var studentsData = studentCollection.find({_id:$(this).data("id")});
+          var studentsData = studentCollection.find({_id:$(this).data("_id")});
           studentsData = studentsData[0];
           studentId = $(this).data("_id");
           $("#studentAgeInput").val(studentsData.age);
