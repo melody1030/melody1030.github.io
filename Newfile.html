@@ -114,16 +114,16 @@
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
         showData(studentCollection.find());
-      })
+      });
       
       $('body').on('click','.delete-btn',function(){
-        console.log("hello");
+        alert(removeId);
         var removeId = $(this).data("id");
         student.Collection.remove({
           _id: removeId
         });
         $("#_id").remove(removeId);
-      })
+      });
     </script>
   </body>
 </html>
