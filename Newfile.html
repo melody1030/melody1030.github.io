@@ -116,6 +116,7 @@
       });
       
       $('body').on('click','.delete-btn',function(){
+        console.log("HI");
         var ans = confirm("確定要刪除嗎");
         if(ans === true){
           studentCollection.remove({
