@@ -64,7 +64,8 @@
       var id=0,
           age=0,
           grade = 0,
-          studentId = "";
+          studentId = "",
+          search = $("#gt").val();
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
@@ -134,7 +135,7 @@
         console.log("hello")
         var result = studentCollection.find({
           age:{
-            "gt": $("#gt").val()
+            "gt": search
           }
         });
         // $("#_id").remove();
