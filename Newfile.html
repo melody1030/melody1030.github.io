@@ -70,7 +70,7 @@
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
-          age = Math.floor(Math.random()*100);
+          grade = Math.floor(Math.random()*100);
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td><span>"+students[i].age+
