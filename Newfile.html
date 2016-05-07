@@ -7,7 +7,8 @@
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </head>
   <body>
-    <input type="text" id="find">
+    <input type="text" id="gt">
+    <button id="search">search</button>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -63,8 +64,7 @@
       var id=0,
           age=0,
           grade = 0,
-          studentId = "",
-          find = $("#find").val();
+          studentId = "";
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
@@ -72,7 +72,7 @@
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td><span>"+students[i].age+
-            "</sapn></td><td>"+grade+
+            "</sapn></td><td>"+students[i].grade+
             "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
             "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
             "'>Delete</button></td></tr>"
@@ -130,6 +130,22 @@
         };
       });
       
+      $("#search").click(function(){
+        var result = studentCollection.find({
+          age:{
+            "gt": $("#gt").val();
+          }
+        });
+        // $("#_id").remove();
+        // $("#_id").append(
+        //     "<tr><td class='students'><span>"+result[i]._id+
+        //     "</span></td><td><span>"+result[i].age+
+        //     "</sapn></td><td>"+result[i].grade+
+        //     "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
+        //     "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
+        //     "'>Delete</button></td></tr>"
+        //   )
+      })
     </script>
   </body>
 </html>
