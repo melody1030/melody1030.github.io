@@ -70,10 +70,11 @@
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
+          age = Math.floor(Math.random()*100);
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td><span>"+students[i].age+
-            "</sapn></td><td>"+Math.floor(Math.random()*100)+
+            "</sapn></td><td>"+grade+
             "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
             "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
             "'>Delete</button></td></tr>"
