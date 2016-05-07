@@ -63,7 +63,8 @@
       var id=0,
           age=0,
           grade = 0,
-          studentId = "";
+          studentId = "",
+          find = $("#find").val();
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
