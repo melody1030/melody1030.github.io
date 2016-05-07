@@ -97,7 +97,7 @@
         $(".students").click(function(){
           var thisStudentId = $(this).text();
           var thisStudent = studentCollection.find({_id:thisStudentId})[0];
-          $("#myModal .modal-body").html("id : "+thisStudent._id+" , age : "+thisStudent.age+" , grade: "+thisStudent.grade);
+          $("#myModal .modal-body").html("id : "+thisStudent._id+" , age : "+thisStudent.age);
           $('#myModal').modal('show')
         });
         
