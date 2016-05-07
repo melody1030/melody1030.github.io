@@ -134,10 +134,10 @@
       
       $("#search").click(function(){
         console.log("hello");
-        var var = $("#age").val();
+        var gt = $("#age").val();
         var result = studentCollection.find({
           age:{
-            "gt": var
+            "gt": gt
           }
         });
       });
