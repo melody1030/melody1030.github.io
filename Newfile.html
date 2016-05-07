@@ -134,22 +134,13 @@
       
       $("#search").click(function(){
         console.log("hello");
-        var gt = $("#age").val();
+        var search = $("#age").val();
         var result = studentCollection.find({
           age:{
-            "gt": gt
+            "gt": search
           }
         });
-        // $("#_id").remove();
-        // $("#_id").append(
-        //     "<tr><td class='students'><span>"+result[i]._id+
-        //     "</span></td><td><span>"+result[i].age+
-        //     "</sapn></td><td>"+result[i].grade+
-        //     "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
-        //     "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
-        //     "'>Delete</button></td></tr>"
-        //   )
-      })
+      });
     </script>
   </body>
 </html>
