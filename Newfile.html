@@ -7,7 +7,8 @@
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </head>
   <body>
-    <input type="text" id="age">
+    <h3>Greater Than</h3>
+    <input type="text" id="age"><h4>~</h4><input type="text" id="lt">
     <button id="search" class="btn btn-info">search</button>
     <table class="table table-striped">
       <thead>
@@ -135,10 +136,12 @@
       
       $("#search").click(function(){
         var gt = $("#age").val();
-        console.log(gt);
+        var lt = $("#lt").val();
+        console.log(gt+" , "lt);
         var result = studentCollection.find({
           age:{
-            $gt: gt
+            $gt: gt,
+            $lt: lt
           }
         });
         console.log(result);
