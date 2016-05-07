@@ -7,7 +7,7 @@
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </head>
   <body>
-    <input type="text" id="gt">
+    <input type="text" id="age">
     <button id="search" class="btn btn-info">search</button>
     <table class="table table-striped">
       <thead>
@@ -64,8 +64,9 @@
       var id=0,
           age=0,
           grade = 0,
-          studentId = "",
-          gt = $("#gt").val();
+          studentId = "";
+      var gt = $("#age").val();
+      
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
@@ -80,6 +81,7 @@
           )
         };
       }
+      
       studentCollection.load(function(){
         // for(var i=0; i<=1;i++){
         //   studentCollection.insert({
