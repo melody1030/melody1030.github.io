@@ -133,8 +133,8 @@
       });
       
       $("#search").click(function(){
-        console.log("hello");
         var gt = $("#age").val();
+        console.log(gt);
         var result = studentCollection.find({
           age:{
             "gt": gt
