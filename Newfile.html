@@ -7,6 +7,7 @@
     <script type="text/javascript" src="/js/bootstrap.js"></script>
   </head>
   <body>
+    <p>greater than</p>
     <input type="text" id="age">
     <button id="search" class="btn btn-info">search</button>
     <table class="table table-striped">
@@ -140,6 +141,15 @@
             "gt": gt
           }
         });
+        $("#_id").remove();
+        $("#_id").append(
+            "<tr><td class='students'><span>"+result[i]._id+
+            "</span></td><td><span>"+result[i].age+
+            "</sapn></td><td>"+result[i].grade+
+            "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
+            "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
+            "'>Delete</button></td></tr>"
+          )
       });
     </script>
   </body>
