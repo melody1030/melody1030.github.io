@@ -13,19 +13,16 @@
     <input type="text" id="lt">
     <button id="search" class="btn btn-primary">search</button>
     <table class="table table-striped">
-      <h1>Add</h1>
-      <input type="text" id="name">
-      <button id="add" class="btn btn-info">Add</button>
-      <thead>
-        <tr>
-          <td>_id</td>
-          <td>age</td>
-          <td>grade</td>
-          <td>操作</td>
-        </tr>
-      </thead>
-      <tbody id="_id">
-      </body>
+    <thead>
+      <tr>
+        <td>_id</td>
+        <td>age</td>
+        <td>grade</td>
+        <td>操作</td>
+      </tr>
+    </thead>
+    <tbody id="_id">
+    </tbody>
     </table>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -133,7 +130,18 @@
             _id: $(this).data("id")
           });
           studentCollection.save();
-          showData(studentCollection.find());
+          var students = studentCollection.find();
+          for(var i=0;i<students.length;i++){
+            grade = Math.floor(Math.random()*100);
+            $("#_id").append(
+              "<tr><td class='students'><span>"+students[i]._id+
+              "</span></td><td><span>"+students[i].age+
+              "</sapn></td><td>"+grade+
+              "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
+              "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
+              "'>Delete</button></td></tr>"
+            )
+          };
         }else if(ans === false){
           alert("hello");
         };
