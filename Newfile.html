@@ -69,13 +69,14 @@
           age=0,
           grade = 0,
           studentId = "";
+      var className = "";
       
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
-          var class = "甲";
           students.grade = Math.floor(Math.random()*100);
+          className = "甲";
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td>"+class
