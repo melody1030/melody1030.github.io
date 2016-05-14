@@ -117,9 +117,9 @@
           var studentData = studentCollection.find({_id:$(this).data("id")});
           studentData = studentData[0];
           studentId = $(this).data("id");
-          $("#studentClassInput").val();
-          $("#studentAgeInput").val();
-          $("#studentGradeInput").val();
+          $("#studentClassInput").val(studentData.class);
+          $("#studentAgeInput").val(studentData.age);
+          $("#studentGradeInput").val(studentData.grade);
           $('#editModal').modal("show");
         });
       });
@@ -161,8 +161,8 @@
       });
       
       $("#search").click(function(){
-        var gt = $("#age").val();
-        var lt = $("#lt").val();
+        var gte = $("#age").val();
+        var lte = $("#lt").val();
         console.log(gt+" , "+lt);
         var classes =[];
         if($("#classA").prop("checked")){
@@ -177,8 +177,8 @@
         console.log(classes);
         var result = studentCollection.find({
           age:{
-            $gt: gt,
-            $lt: lt||Infinity
+            $gte: gte,
+            $lte: lte||Infinity
           },
           class:{
             $in: classes
