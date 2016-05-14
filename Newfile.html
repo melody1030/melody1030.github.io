@@ -127,8 +127,8 @@
       $("#saveChange").click(function(){
         var newData ={};
         newData.className = $("#studentClassInput").val();
-        newData.age= $("#studentAgeInput").val(studentData.age);
-        newData.grade= $("#studentGradeInput").val(studentData.grade);
+        newData.age= $("#studentAgeInput").val();
+        newData.grade= $("#studentGradeInput").val();
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
         showData(studentCollection.find());
