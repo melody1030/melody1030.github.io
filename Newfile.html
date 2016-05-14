@@ -11,15 +11,15 @@
     <input type="text" id="age">
     <span>~</span>
     <input type="text" id="lt">
-    <button id="search" class="btn btn-primary">search</button>
     <span>甲</span>
     <input type="checkbox" id="classa"/>
     <span>乙</span>
     <input type="checkbox" id="classb"/>
     <span>丙</span>
     <input type="checkbox" id="classc"/>
-    <thead>
+    <button id="search" class="btn btn-primary">search</button>
     <table class="table table-striped">
+    <thead>
       <tr>
         <td>_id</td>
         <td>class</td>
@@ -168,7 +168,6 @@
           age:{
             $gt: gt,
             $lt: lt,
-            $in:
           }
         });
         console.log(result);
