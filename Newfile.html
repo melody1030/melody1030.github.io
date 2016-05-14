@@ -174,6 +174,7 @@
         if($("#classC").prop("checked")){
           classes.push("丙班");
         }
+        console.log(classes);
         var result = studentCollection.find({
           age:{
             $gt: gt,
