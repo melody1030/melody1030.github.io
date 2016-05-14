@@ -69,18 +69,15 @@
           age=0,
           grade = 0,
           studentId = "";
-      var className = "";
       
       studentCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
           students.grade = Math.floor(Math.random()*100);
-          className = "甲";
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
-            "</span></td><td>"+class
-            "</td><td><span>"+students[i].age+
+            "</span></td><td><span>"+students[i].age+
             "</sapn></td><td>"+students[i].grade+
             "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
             "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
