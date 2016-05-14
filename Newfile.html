@@ -118,11 +118,10 @@
       });
       
       $("#saveChange").click(function(){
-        var newData ={
-          className: $("#studentClassInput").val(studentData.class),
-          age: $("#studentAgeInput").val(studentData.age),
-          grade: $("#studentGradeInput").val(studentData.grade)
-        };
+        var newData ={};
+        newData.className = $("#studentClassInput").val();
+        newData.age= $("#studentAgeInput").val(studentData.age);
+        newData.grade= $("#studentGradeInput").val(studentData.grade);
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
         showData(studentCollection.find());
