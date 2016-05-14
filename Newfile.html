@@ -163,11 +163,11 @@
       $("#search").click(function(){
         var gt = $("#age").val();
         var lt = $("#lt").val();
-        if($("#classA")prop() ==true){
+        if($("#classA")prop("checked")){
           classes = ["甲"]; 
-        }else if ($("#classB")prop()==true){
+        }else if ($("#classB")prop("checked")){
           classes = ["乙"]; 
-        }else if ($("#classC")prop()==true){
+        }else if ($("#classC")prop("checked")){
           classes = ["丙"]; 
         }
         console.log(gt+" , "+lt);
