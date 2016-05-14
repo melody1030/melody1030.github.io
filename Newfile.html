@@ -163,13 +163,6 @@
       $("#search").click(function(){
         var gt = $("#age").val();
         var lt = $("#lt").val();
-        if($("#classA")prop("checked")){
-          classes = ["甲"]; 
-        }else if ($("#classB")prop("checked")){
-          classes = ["乙"]; 
-        }else if ($("#classC")prop("checked")){
-          classes = ["丙"]; 
-        }
         console.log(gt+" , "+lt);
         var result = studentCollection.find({
           age:{
