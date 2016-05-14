@@ -76,7 +76,7 @@
       var id=0,
           age=0,
           grade = 0,
-          classes =;
+          classes =,
           studentId = "";
       
       studentCollection = db.collection('students');
@@ -175,7 +175,7 @@
           age:{
             $gt: gt,
             $lt: lt,
-            $in: classes;
+            $in: classes
           }
         });
         console.log(result);
@@ -184,7 +184,7 @@
           $("#_id").append(
             "<tr><td class='students'><span>"+result[i]._id+
             "</span></td><td class='class'><span>"+"甲"+
-              "</span></td><td><span>"+result[i].age+
+            "</span></td><td><span>"+result[i].age+
             "</sapn></td><td>"+grade+
             "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+result[i]._id+
             "'>Change</button><button class='delete-btn' data-id='"+result[i]._id+
