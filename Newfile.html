@@ -12,11 +12,11 @@
     <span>~</span>
     <input type="text" id="lt">
     <br>
-    <input type="checkbox" id="classA"/>
+    <input type="checkbox" id="classA" checked="true" />
     <span>甲班</span>
-    <input type="checkbox" id="classB"/>
+    <input type="checkbox" id="classB"checked="true" />
     <span>乙班</span>
-    <input type="checkbox" id="classC"/>
+    <input type="checkbox" id="classC"checked="true" />
     <span>丙班</span>
     <button id="search" class="btn btn-primary">search</button>
     <table class="table table-striped">
@@ -77,7 +77,6 @@
       var id=0,
           age=0,
           grade = 0,
-          classes =[],
           studentId = "";
       
       studentCollection = db.collection('students');
@@ -165,6 +164,16 @@
         var gt = $("#age").val();
         var lt = $("#lt").val();
         console.log(gt+" , "+lt);
+        var classes =[];
+        if($("#classA").prop("checked")){
+          classes.push("甲班");
+        }
+        if($("#classB").prop("checked")){
+          classes.push("乙班");
+        }
+        if($("#classC").prop("checked")){
+          classes.push("丙班");
+        }
         var result = studentCollection.find({
           age:{
             $gt: gt,
