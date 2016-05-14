@@ -12,11 +12,11 @@
     <span>~</span>
     <input type="text" id="lt">
     <span>甲</span>
-    <input type="checkbox" id="classa"/>
+    <input type="checkbox" id="classA"/>
     <span>乙</span>
-    <input type="checkbox" id="classb"/>
+    <input type="checkbox" id="classB"/>
     <span>丙</span>
-    <input type="checkbox" id="classc"/>
+    <input type="checkbox" id="classC"/>
     <button id="search" class="btn btn-primary">search</button>
     <table class="table table-striped">
     <thead>
@@ -76,7 +76,7 @@
       var id=0,
           age=0,
           grade = 0,
-          classes =["甲","乙","丙"];
+          classes =;
           studentId = "";
       
       studentCollection = db.collection('students');
@@ -163,11 +163,19 @@
       $("#search").click(function(){
         var gt = $("#age").val();
         var lt = $("#lt").val();
+        if($("#classA")prop("checked")==true){
+          classes = ["甲"]; 
+        }else if ($("#classB")prop("checked")==true){
+          classes = ["乙"]; 
+        }else if ($("#classC")prop("checked")==true){
+          classes = ["丙"]; 
+        }
         console.log(gt+" , "+lt);
         var result = studentCollection.find({
           age:{
             $gt: gt,
             $lt: lt,
+            $in: classes;
           }
         });
         console.log(result);
@@ -175,7 +183,8 @@
         for(var i=0;i<result.length;i++){
           $("#_id").append(
             "<tr><td class='students'><span>"+result[i]._id+
-            "</span></td><td><span>"+result[i].age+
+            "</span></td><td class='class'><span>"+"甲"+
+              "</span></td><td><span>"+result[i].age+
             "</sapn></td><td>"+grade+
             "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+result[i]._id+
             "'>Change</button><button class='delete-btn' data-id='"+result[i]._id+
