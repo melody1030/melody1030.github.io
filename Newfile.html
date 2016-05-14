@@ -13,6 +13,7 @@
     <input type="text" id="lt">
     <button id="search" class="btn btn-primary">search</button>
     <table class="table table-striped">
+    <input type="checkbox" id="class"/>
     <thead>
       <tr>
         <td>_id</td>
@@ -50,6 +51,8 @@
             <h4 class="modal-title" id="myModalLabel">New Data</h4>
           </div>
           <div class="modal-body">
+            <lable class="control-label">class</lable>
+            <input type="text" id="studentClassInput">
             <lable class="control-label">age</lable>
             <input type="text" id="studentAgeInput">
             <lable class="control-label">grade</lable>
@@ -107,6 +110,7 @@
           var studentData = studentCollection.find({_id:$(this).data("id")});
           studentData = studentData[0];
           studentId = $(this).data("id");
+          $("#studentClassInput").val();
           $("#studentAgeInput").val();
           $("#studentGradeInput").val();
           $('#editModal').modal("show");
@@ -115,6 +119,7 @@
       
       $("#saveChange").click(function(){
         var newData ={
+          $("#studentClassInput").val(studentData.class);
           age: $("#studentAgeInput").val(studentData.age),
           grade: $("#studentGradeInput").val(studentData.grade)
         };
