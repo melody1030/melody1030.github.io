@@ -78,8 +78,9 @@
           age=0,
           grade = 0,
           studentId = "";
-      
-      studentCollection = db.collection('students');
+      var studentCollection = db.collection('students');
+      var parentsCollection = db.collection('students');
+      var teachersCollection = db.collection('students');
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
