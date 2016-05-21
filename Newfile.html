@@ -79,8 +79,8 @@
           grade = 0,
           studentId = "";
       var studentCollection = db.collection('students');
-      var parentsCollection = db.collection('students');
-      var teachersCollection = db.collection('students');
+      var parentsCollection = db.collection('parents');
+      var teachersCollection = db.collection('teachers');
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
