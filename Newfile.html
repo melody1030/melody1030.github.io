@@ -116,8 +116,8 @@
         };
       }
       
-      parentCollection.load();
-      teacherCollection.load();
+      parentsCollection.load();
+      teachersCollection.load();
       studentCollection.load(function(){
         // for(var i=0; i<=1;i++){
         //   studentCollection.insert({
@@ -157,8 +157,8 @@
         newData.teacherId = $("#teaxherId").val();
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
-        parentCollection.save();
-        teacherCollection.save();
+        parentsCollection.save();
+        teachersCollection.save();
         showData(studentCollection.find());
       });
       
