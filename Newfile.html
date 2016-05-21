@@ -100,6 +100,7 @@
       var studentCollection = db.collection('students');
       var parentsCollection = db.collection('parents');
       var teachersCollection = db.collection('teachers');
+      
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
@@ -114,10 +115,26 @@
             "'>Delete</button></td></tr>"
           )
         };
+        studentCollection.save();
       }
       
-      parentsCollection.load();
-      teachersCollection.load();
+      parentsCollection.load(function(){
+        $("#parentId").append("<option value=''>請選擇家長</option>");
+        for(var i =0;i<parents.length;i++){
+          $("#parentId").append(
+            "<option value='parents[i]._id'>"+parents.name+"</option>"+
+          );
+        }
+      }
+      );
+      teachersCollection.load(function(){
+        $("#teachersId").append("<option value=''>請選擇老師</option>");
+        for(var i =0;i<teachers.length;i++){
+          $("#teachersId").append(
+            "<option value='teachers[i]._id'>"+teachers.name+"</option>"+
+          );
+        }
+      });
       studentCollection.load(function(){
         // for(var i=0; i<=1;i++){
         //   studentCollection.insert({
