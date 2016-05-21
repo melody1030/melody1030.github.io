@@ -75,7 +75,7 @@
             </select>
             <br>
             <lable class="control-label">Teacher</lable>
-            <select id="parentId">
+            <select id="teacherId">
             <option value="">請選擇老師</option>
               <option value="1">Dude</option>
               <option value="2">Ya</option>
@@ -116,6 +116,8 @@
         };
       }
       
+      parentCollection.load();
+      teacherCollection.load();
       studentCollection.load(function(){
         // for(var i=0; i<=1;i++){
         //   studentCollection.insert({
@@ -140,6 +142,8 @@
           $("#studentClassInput").val(studentData.class);
           $("#studentAgeInput").val(studentData.age);
           $("#studentGradeInput").val(studentData.grade);
+          $("#parentId").val(studentData.parentId);
+          $("#teacherId").val(studentData.teacherId);
           $('#editModal').modal("show");
         });
       });
@@ -149,8 +153,12 @@
         newData.className = $("#studentClassInput").val();
         newData.age= $("#studentAgeInput").val();
         newData.grade= $("#studentGradeInput").val();
+        newData.parentId = $("#parentId").val();
+        newData.teacherId = $("#teaxherId").val();
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
+        parentCollection.save();
+        teacherCollection.save();
         showData(studentCollection.find());
       });
       
