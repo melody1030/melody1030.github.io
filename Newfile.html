@@ -113,17 +113,19 @@
       }
       
       parentsCollection.load(function(){
-        for(var i =0;i<parents.length;i++){
+        var result = parentsCollection.find();
+        for(var i =0;i<results.length;i++){
           $("#parentId").append(
-            "<option value='"+parents[i]._id+"'>"+parents.name+"</option>"
+            "<option value='"+result[i]._id+"'>"+result.name+"</option>"
           );
         }
       }
       );
       teachersCollection.load(function(){
-        for(var i =0;i<teachers.length;i++){
+        var result = teachersCollection.find();
+        for(var i =0;i<result.length;i++){
           $("#teachersId").append(
-            "<option value='"+teachers[i]._id+"'>"+teachers.name+"</option>"
+            "<option value='"+result[i]._id+"'>"+result.name+"</option>"
           );
         }
       });
