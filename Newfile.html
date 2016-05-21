@@ -116,7 +116,7 @@
         var result = parentsCollection.find();
         for(var i =0;i<result.length;i++){
           $("#parentId").append(
-            "<option value='"+result[i]_id+"'>"+result.name+"</option>"
+            "<option value='"+result[i]._id+"'>"+result.name+"</option>"
           );
         }
       }
@@ -125,7 +125,7 @@
         var result = teachersCollection.find();
         for(var i =0;i<result.length;i++){
           $("#teachersId").append(
-            "<option value='"+result[i]_id+"'>"+result.name+"</option>"
+            "<option value='"+result[i]._id+"'>"+result.name+"</option>"
           );
         }
       });
