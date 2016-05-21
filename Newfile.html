@@ -69,17 +69,11 @@
             <lable class="control-label">Parent</lable>
             <select id="parentId">
             <option value="">請選擇家長</option>
-              <option value="1">Kevin</option>
-              <option value="2">Melody</option>
-              <option value="3">Apple</option>
             </select>
             <br>
             <lable class="control-label">Teacher</lable>
             <select id="teacherId">
-            <option value="">請選擇老師</option>
-              <option value="1">Dude</option>
-              <option value="2">Ya</option>
-              <option value="3">Hello</option>
+            <option value="">請選擇導師</option>
             </select>
             
           </div>
@@ -119,19 +113,17 @@
       }
       
       parentsCollection.load(function(){
-        $("#parentId").append("<option value=''>請選擇家長</option>");
         for(var i =0;i<parents.length;i++){
           $("#parentId").append(
-            "<option value='parents[i]._id'>"+parents.name+"</option>"+
+            "<option value='"+parents[i]._id+"'>"+parents.name+"</option>"+
           );
         }
       }
       );
       teachersCollection.load(function(){
-        $("#teachersId").append("<option value=''>請選擇老師</option>");
         for(var i =0;i<teachers.length;i++){
           $("#teachersId").append(
-            "<option value='teachers[i]._id'>"+teachers.name+"</option>"+
+            "<option value='"+teachers[i]._id+"'>"+teachers.name+"</option>"+
           );
         }
       });
@@ -171,7 +163,7 @@
         newData.age= $("#studentAgeInput").val();
         newData.grade= $("#studentGradeInput").val();
         newData.parentId = $("#parentId").val();
-        newData.teacherId = $("#teaxherId").val();
+        newData.teacherId = $("#teacherId").val();
         studentCollection.updateById(studentId,newData);
         studentCollection.save();
         parentsCollection.save();
