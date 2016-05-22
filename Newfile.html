@@ -98,12 +98,11 @@
       function showData(data){
         var students = studentCollection.find();
         for(var i=0;i<students.length;i++){
-          grade = Math.floor(Math.random()*100);
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
             "</span></td><td class='class'><span>"+students[i].class+
             "</span></td><td><span>"+students[i].age+
-            "</sapn></td><td>"+grade+
+            "</sapn></td><td>"+students[i].grade+
             "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
             "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
             "'>Delete</button></td></tr>"
@@ -188,7 +187,7 @@
               "<tr><td class='students'><span>"+students[i]._id+
               "</span></td><td class='class'><span>"+students[i].class+
               "</span></td><td><span>"+students[i].age+
-              "</sapn></td><td>"+grade+
+              "</sapn></td><td>"+students[i].grade+
               "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
               "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
               "'>Delete</button></td></tr>"
@@ -230,7 +229,7 @@
             "<tr><td class='students'><span>"+result[i]._id+
             "</span></td><td class='class'><span>"+result[i].class+
             "</span></td><td><span>"+result[i].age+
-            "</sapn></td><td>"+grade+
+            "</sapn></td><td>"+result[i].grade+
             "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+result[i]._id+
             "'>Change</button><button class='delete-btn' data-id='"+result[i]._id+
             "'>Delete</button></td></tr>"
