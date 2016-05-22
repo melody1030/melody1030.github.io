@@ -144,6 +144,7 @@
           $('#myModal').modal('show')
         });
         
+        // edit imformation
         $(".edit-btn").click(function(){
           console.log("I'm in");
           var studentData = studentCollection.find({_id:$(this).data("id")});
@@ -158,11 +159,12 @@
         });
       });
       
+      // save imformation
       $("#saveChange").click(function(){
         var newData ={};
-        newData.className = $("#studentClassInput").val();
         newData.age= $("#studentAgeInput").val();
         newData.grade= $("#studentGradeInput").val();
+        newData.className = $("#studentClassInput").val();
         newData.parentId = $("#parentId").val();
         newData.teacherId = $("#teacherId").val();
         studentCollection.updateById(studentId,newData);
@@ -172,6 +174,7 @@
         showData(studentCollection.find());
       });
       
+      // delete
       $('body').on('click','.delete-btn',function(){
         console.log("HI");
         var ans = confirm("確定要刪除嗎");
@@ -198,6 +201,7 @@
         };
       });
       
+      // search
       $("#search").click(function(){
         var gte = $("#age").val();
         var lte = $("#lt").val();
