@@ -21,6 +21,8 @@
     <span>丙班</span>
     <button id="search" class="btn btn-primary">search</button>
     <table class="table table-striped">
+    <h1>New</h1>
+    <button id="new-btn" class="btn btn-warning">add</button>
     <thead>
       <tr>
         <td>_id</td>
@@ -33,6 +35,8 @@
     <tbody id="_id">
     </tbody>
     </table>
+    
+    <!--edit button-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -55,7 +59,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">New Data</h4>
+            <h4 class="modal-title" id="myModalLabel">Edit Data</h4>
           </div>
           <div class="modal-body">
             <lable class="control-label">Class</lable>
@@ -77,6 +81,64 @@
             <option value="">請選擇導師</option>
             </select>
             
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveChange">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--add new information-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add New One</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edditModal -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">New Data</h4>
+          </div>
+          <div class="modal-body">
+            <lable class="control-label">Class</lable>
+            <select>
+            <option value="">請選擇班級</option>
+            <option value="">甲班</option>
+            <option value="">乙班</option>
+            <option value="">丙班</option>
+            </select>
+            <br>
+            <lable class="control-label">Age</lable>
+            <input type="text" id="studentAgeInput">
+            <br>
+            <lable class="control-label">Grade</lable>
+            <input type="text" id="studentGradeInput">
+            <br>
+            <lable class="control-label">Parent</lable>
+            <select id="parentId">
+            <option value="">請選擇家長</option>
+            </select>
+            <br>
+            <lable class="control-label">Teacher</lable>
+            <select id="teacherId">
+            <option value="">請選擇導師</option>
+            </select>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
