@@ -91,7 +91,7 @@
     </div>
     
     <!--add new information-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -117,7 +117,7 @@
           </div>
           <div class="modal-body">
             <lable class="control-label">Class</lable>
-            <select>
+            <select id="classes">
             <option value="">請選擇班級</option>
             <option value="">甲班</option>
             <option value="">乙班</option>
@@ -125,24 +125,24 @@
             </select>
             <br>
             <lable class="control-label">Age</lable>
-            <input type="text" id="studentAgeInput">
+            <input type="text" id="newAgeInput">
             <br>
             <lable class="control-label">Grade</lable>
-            <input type="text" id="studentGradeInput">
+            <input type="text" id="newGradeInput">
             <br>
             <lable class="control-label">Parent</lable>
-            <select id="parentId">
+            <select id="newParent">
             <option value="">請選擇家長</option>
             </select>
             <br>
             <lable class="control-label">Teacher</lable>
-            <select id="teacherId">
+            <select id="newTeacher">
             <option value="">請選擇導師</option>
             </select>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="saveChange">Save changes</button>
+            <button type="button" class="btn btn-primary" id="saveNew">Save changes</button>
           </div>
         </div>
       </div>
@@ -211,7 +211,21 @@
           $('#myModal').modal('show')
         });
         
-        // edit imformation
+        // add information
+        $("#new-btn").click(function(){
+          $('#newModal').modal("show");
+        })
+        $("#saveNew").click(function(){
+          studentCollection.insert({
+            class: $("#classes").val(),
+            age: $("#newAgeInput").val(),
+            grade: $("#newGradeInput").val(),
+            parent: $("#newParent").val(),
+            teacher: $("#newTeacher").val()
+          })
+        })
+        
+        // edit information
         $(".edit-btn").click(function(){
           console.log("I'm in");
           var studentData = studentCollection.find({_id:$(this).data("id")});
