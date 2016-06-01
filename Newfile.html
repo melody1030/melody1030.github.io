@@ -222,13 +222,20 @@
           $('#newModal').modal("show");
         })
         $("#saveNew").click(function(){
+          var newData = {};
+          newData.age= $("#newAgeInput").val();
+          newData.grade= $("#newGradeInput").val();
+          newData.class = $("#classes").val();
+          newData.parentId = $("#newParent").val();
+          newData.teacherId = $("#newTeacher").val();
           studentCollection.insert({
-            class: $("#classes").val(),
-            age: $("#newAgeInput").val(),
-            grade: $("#newGradeInput").val(),
-            parent: $("#newParent").val(),
-            teacher: $("#newTeacher").val()
+            age: newData.age,
+            grade: newData.grade,
+            class: newData.class,
+            parent: newData.parentId,
+            teacher: newData.teacherId
           });
+          studnetCollection.save();
         })
         
         // edit information
