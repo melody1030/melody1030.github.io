@@ -118,10 +118,10 @@
           <div class="modal-body">
             <lable class="control-label">Class</lable>
             <select id="classes">
-            <option value="">請選擇班級</option>
-            <option value="">甲班</option>
-            <option value="">乙班</option>
-            <option value="">丙班</option>
+            <option value="0">請選擇班級</option>
+            <option value="1">甲班</option>
+            <option value="2">乙班</option>
+            <option value="3">丙班</option>
             </select>
             <br>
             <lable class="control-label">Age</lable>
@@ -225,9 +225,17 @@
           var newData = {};
           newData.age= $("#newAgeInput").val();
           newData.grade= $("#newGradeInput").val();
-          newData.class = $("#classes").val();
           newData.parentId = $("#newParent").val();
           newData.teacherId = $("#newTeacher").val();
+          if($("#classes").val()==0){
+            newData.class="";
+          }else if($("#classes").val()==1){
+            newData.class="甲班";
+          }else if($("#classes").val()==2){
+            newData.class="乙班";
+          }else if($("#classes").val()==3){
+            newData.class="丙班";
+          }
           studentCollection.insert({
             age: newData.age,
             grade: newData.grade,
