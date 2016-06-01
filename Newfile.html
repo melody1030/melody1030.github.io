@@ -180,6 +180,9 @@
           $("#parentId").append(
             "<option value='"+result[i]._id+"'>"+result[i].name+"</option>"
           );
+          $("#newParent").append(
+            "<option value='"+result[i]._id+"'>"+result[i].name+"</option>"
+          );
         }
       }
       );
@@ -187,6 +190,9 @@
         var result = teachersCollection.find();
         for(var i =0;i<result.length;i++){
           $("#teacherId").append(
+            "<option value='"+result[i]._id+"'>"+result[i].name+"</option>"
+          );
+          $("#newTeacher").append(
             "<option value='"+result[i]._id+"'>"+result[i].name+"</option>"
           );
         }
@@ -222,7 +228,7 @@
             grade: $("#newGradeInput").val(),
             parent: $("#newParent").val(),
             teacher: $("#newTeacher").val()
-          })
+          });
         })
         
         // edit information
