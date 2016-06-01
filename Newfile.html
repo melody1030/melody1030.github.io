@@ -235,7 +235,12 @@
             parent: newData.parentId,
             teacher: newData.teacherId
           });
-          studnetCollection.save();
+          studentCollection.save();
+          $("#newAgeInput").val("");
+          $("#newGradeInput").val("");
+          $("#classes").val("");
+          $("#newParent").val("");
+          $("#newTeacher").val("");
         })
         
         // edit information
