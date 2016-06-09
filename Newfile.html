@@ -358,8 +358,19 @@
         studentCollection.save();
         parentsCollection.save();
         teachersCollection.save();
-        studentCollection.remove();
-        showData(studentCollection.find());
+        $("#_id *").remove();
+          var students = studentCollection.find();
+          for(var i=0;i<students.length;i++){
+            $("#_id").append(
+              "<tr><td class='students'><span>"+students[i]._id+
+              "</span></td><td class='studentName'><span>"+students[i].name+
+              "</span></td><td class='class'><span>"+students[i].class+
+              "</span></td><td><span>"+students[i].age+
+              "</sapn></td><td>"+students[i].grade+
+              "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+students[i]._id+
+              "'>Change</button><button class='delete-btn' data-id='"+students[i]._id+
+              "'>Delete</button></td></tr>"
+            )
       });
       
       // delete
@@ -371,7 +382,7 @@
             _id: $(this).data("id")
           });
           studentCollection.save();
-          studentCollection.remove();
+          $("#_id *").remove();
           var students = studentCollection.find();
           for(var i=0;i<students.length;i++){
             $("#_id").append(
