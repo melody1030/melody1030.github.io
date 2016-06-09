@@ -131,16 +131,6 @@
             <br>
             <lable class="control-label">Grade</lable>
             <input type="text" id="newGradeInput">
-            <br>
-            <lable class="control-label">Parent</lable>
-            <select id="newParent">
-            <option value="">請選擇家長</option>
-            </select>
-            <br>
-            <lable class="control-label">Teacher</lable>
-            <select id="newTeacher">
-            <option value="">請選擇導師</option>
-            </select>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -267,8 +257,6 @@
           var newData = {};
           newData.age= $("#newAgeInput").val();
           newData.grade= $("#newGradeInput").val();
-          newData.parentId = $("#newParent").val();
-          newData.teacherId = $("#newTeacher").val();
           if($("#classes").val()==0){
             newData.class="";
           }else if($("#classes").val()==1){
@@ -281,9 +269,7 @@
           studentCollection.insert({
             age: newData.age,
             grade: newData.grade,
-            class: newData.class,
-            parent: newData.parentId,
-            teacher: newData.teacherId
+            class: newData.class
           });
           $("#_id").append(
             "<tr><td class='students'><span>"+newData._id+
@@ -300,8 +286,6 @@
           $("#newAgeInput").val("");
           $("#newGradeInput").val("");
           $("#classes").val("");
-          $("#newParent").val("");
-          $("#newTeacher").val("");
         })
         
         // add parents information
