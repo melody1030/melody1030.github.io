@@ -371,6 +371,7 @@
             _id: $(this).data("id")
           });
           studentCollection.save();
+          studentCollection.remove();
           var students = studentCollection.find();
           for(var i=0;i<students.length;i++){
             $("#_id").append(
