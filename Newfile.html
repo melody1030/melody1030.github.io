@@ -347,7 +347,7 @@
         
         $("#saveParents").click(function(){
           parentsCollection.insert({
-            name:$("newParentName").val();
+            name:$("newParentName").val()
           });
           $("newParentName").val("");
           parentsCollection.save();
