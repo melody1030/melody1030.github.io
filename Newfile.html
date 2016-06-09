@@ -22,7 +22,9 @@
     <button id="search" class="btn btn-primary">search</button>
     <table class="table table-striped">
     <h1>New</h1>
-    <button id="new-btn" class="btn btn-warning">add</button>
+    <button id="new-btn" class="btn btn-warning">add Students</button>
+    <button id="parent-btn" class="btn btn-success">add Parents</button>
+    <button id="teacher-btn" class="btn btn-danger">add Teachers</button>
     <thead>
       <tr>
         <td>_id</td>
@@ -90,7 +92,7 @@
       </div>
     </div>
     
-    <!--add information-btn-->
+    <!--add students-btn-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -143,6 +145,82 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="saveNew">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--add parents-btn-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add New One</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edditModal -->
+    <div class="modal fade" id="parentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">New Data</h4>
+          </div>
+          <div class="modal-body">
+            <lable class="control-label">Name</lable>
+            <input type="text" id="newParentName">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveParents">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--add teachers-btn-->
+    <div class="modal fade" id="teacherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add New One</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- edditModal -->
+    <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">New Data</h4>
+          </div>
+          <div class="modal-body">
+            <lable class="control-label">Name</lable>
+            <input type="text" id="newteachersName">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveTeachers">Save changes</button>
           </div>
         </div>
       </div>
@@ -217,7 +295,7 @@
           $('#myModal').modal('show')
         });
         
-        // add information
+        // add students information
         $("#new-btn").click(function(){
           $('#newModal').modal("show");
         })
@@ -260,6 +338,19 @@
           $("#classes").val("");
           $("#newParent").val("");
           $("#newTeacher").val("");
+        })
+        
+        // add parents information
+        $("#parent-btn").click(function(){
+          $("#parentModal").modal("show");
+        })
+        
+        $("#saveParents").click(function(){
+          parentsCollection.insert({
+            name:$("newParentName").val();
+          });
+          $("newParentName").val("");
+          parentsCollection.save();
         })
         
         // edit information
