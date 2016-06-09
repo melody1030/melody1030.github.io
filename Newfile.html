@@ -243,16 +243,17 @@
             parent: newData.parentId,
             teacher: newData.teacherId
           });
-          console.log(newData);
           $("#_id").append(
-              "<tr><td class='students'><span>"+newData._id+
-              "</span></td><td class='class'><span>"+newData.class+
-              "</span></td><td><span>"+newData.age+
-              "</sapn></td><td>"+newData.grade+
-              "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+newData._id+
-              "'>Change</button><button class='delete-btn' data-id='"+newData._id+
-              "'>Delete</button></td></tr>"
-            )
+            "<tr><td class='students'><span>"+newData._id+
+            "</span></td><td class='class'><span>"+newData.class+
+            "</span></td><td><span>"+newData.age+
+            "</sapn></td><td>"+newData.grade+
+            "</td><td><button class='edit-btn' class='btn btn-info' data-id='"+newData._id+
+            "'>Change</button><button class='delete-btn' data-id='"+newData._id+
+            "'>Delete</button></td></tr>"
+          )
+          console.log(newData);
+          
           studentCollection.save();
           $("#newAgeInput").val("");
           $("#newGradeInput").val("");
