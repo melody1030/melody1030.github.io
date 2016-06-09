@@ -346,10 +346,11 @@
         })
         
         $("#saveParents").click(function(){
+          var name = $("#newParentName").val();
           parentsCollection.insert({
-            name:$("newParentName").val()
+            name: name
           });
-          $("newParentName").val("");
+          $("#newParentName").val("");
           parentsCollection.save();
         })
         
