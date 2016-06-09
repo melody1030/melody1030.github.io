@@ -28,6 +28,7 @@
     <thead>
       <tr>
         <td>_id</td>
+        <td>name</id>
         <td>class</td>
         <td>age</td>
         <td>grade</td>
@@ -64,6 +65,9 @@
             <h4 class="modal-title" id="myModalLabel">Edit Data</h4>
           </div>
           <div class="modal-body">
+            <lable class="control-label">Name</lable>
+            <input type="text" id="studentNameInput">
+            <br>
             <lable class="control-label">Class</lable>
             <input type="text" id="studentClassInput">
             <br>
@@ -118,6 +122,9 @@
             <h4 class="modal-title" id="myModalLabel">New Data</h4>
           </div>
           <div class="modal-body">
+            <lable class="control-label">Name</lable>
+            <input type="text" id="newNameInput">
+            <br>
             <lable class="control-label">Class</lable>
             <select id="classes">
             <option value="0">請選擇班級</option>
@@ -195,6 +202,7 @@
         for(var i=0;i<students.length;i++){
           $("#_id").append(
             "<tr><td class='students'><span>"+students[i]._id+
+            "</span></td><td class='studentName'><span>"+students[i].name+
             "</span></td><td class='class'><span>"+students[i].class+
             "</span></td><td><span>"+students[i].age+
             "</sapn></td><td>"+students[i].grade+
@@ -243,6 +251,7 @@
           var thisStudent = studentCollection.find({_id:thisStudentId})[0];
           $("#myModal .modal-body").html(
             "id : "+thisStudent._id+
+            " , name: "+thisStudent.name+
             " , age : "+thisStudent.age+
             " , class: "+thisStudent.class+
             " , grade: "+thisStudent.grade);
@@ -255,6 +264,7 @@
         })
         $("#saveNew").click(function(){
           var newData = {};
+          newData.name= $("#newNameInput").val();
           newData.age= $("#newAgeInput").val();
           newData.grade= $("#newGradeInput").val();
           if($("#classes").val()==0){
@@ -267,12 +277,14 @@
             newData.class="丙班";
           }
           studentCollection.insert({
+            name : newData.name,
             age: newData.age,
             grade: newData.grade,
             class: newData.class
           });
           $("#_id").append(
             "<tr><td class='students'><span>"+newData._id+
+            "</span></td><td class='studentName'><span>"+newData.name+
             "</span></td><td class='class'><span>"+newData.class+
             "</span></td><td><span>"+newData.age+
             "</sapn></td><td>"+newData.grade+
@@ -283,6 +295,7 @@
           console.log(newData);
           
           studentCollection.save();
+          $("#newNameInput").val("");
           $("#newAgeInput").val("");
           $("#newGradeInput").val("");
           $("#classes").val("");
@@ -322,6 +335,7 @@
           var studentData = studentCollection.find({_id:$(this).data("id")});
           studentData = studentData[0];
           studentId = $(this).data("id");
+          $("#studentNameInput").val(studentData.name);
           $("#studentClassInput").val(studentData.class);
           $("#studentAgeInput").val(studentData.age);
           $("#studentGradeInput").val(studentData.grade);
@@ -334,6 +348,7 @@
       // save imformation
       $("#saveEdit").click(function(){
         var newData ={};
+        newData.name= $("#studentNameInput").val();
         newData.age= $("#studentAgeInput").val();
         newData.grade= $("#studentGradeInput").val();
         newData.class = $("#studentClassInput").val();
@@ -343,6 +358,7 @@
         studentCollection.save();
         parentsCollection.save();
         teachersCollection.save();
+        studentCollection.remove();
         showData(studentCollection.find());
       });
       
@@ -360,6 +376,7 @@
           for(var i=0;i<students.length;i++){
             $("#_id").append(
               "<tr><td class='students'><span>"+students[i]._id+
+              "</span></td><td class='studentName'><span>"+students[i].name+
               "</span></td><td class='class'><span>"+students[i].class+
               "</span></td><td><span>"+students[i].age+
               "</sapn></td><td>"+students[i].grade+
@@ -403,6 +420,7 @@
         for(var i=0;i<result.length;i++){
           $("#_id").append(
             "<tr><td class='students'><span>"+result[i]._id+
+            "</span></td><td class='studentName'><span>"+result[i].name+
             "</span></td><td class='class'><span>"+result[i].class+
             "</span></td><td><span>"+result[i].age+
             "</sapn></td><td>"+result[i].grade+
