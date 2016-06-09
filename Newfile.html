@@ -324,11 +324,11 @@
         })
         
         $("#saveTeacher").click(function(){
-          var name = $("#newTeacehrName").val();
+          var name = $("#newTeacherName").val();
           teachersCollection.insert({
             name: name
           });
-          $("#newTeacehrName").val("");
+          $("#newTeacherName").val("");
           teachersCollection.save();
         })
         
