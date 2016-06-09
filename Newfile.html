@@ -169,6 +169,7 @@
         </div>
       </div>
     </div>
+    
     <!-- add teachers-btn -->
     <div class="modal fade" id="teacherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -308,13 +309,27 @@
           $("#parentModal").modal("show");
         })
         
-        $("#saveParents").click(function(){
+        $("#saveParent").click(function(){
           var name = $("#newParentName").val();
           parentsCollection.insert({
             name: name
           });
           $("#newParentName").val("");
           parentsCollection.save();
+        })
+        
+        // add teachers information
+        $("#teacher-btn").click(function(){
+          $("#teacherModal").modal("show");
+        })
+        
+        $("#saveTeacher").click(function(){
+          var name = $("#newTeacehrName").val();
+          teachersCollection.insert({
+            name: name
+          });
+          $("#newTeacehrName").val("");
+          teachersCollection.save();
         })
         
         // edit information
