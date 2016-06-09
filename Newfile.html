@@ -402,7 +402,7 @@
       });
       
       // search
-      $("#search").click(function(){
+      $('body').on('click','#search',function(){
         var gte = $("#age").val();
         var lte = $("#lt").val();
         console.log(gte+" , "+lte);
